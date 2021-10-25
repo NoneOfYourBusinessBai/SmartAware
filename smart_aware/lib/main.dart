@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_aware/navigation/about.dart';
 import 'navigation/landing.dart';
 import 'navigation/analysis.dart';
+import 'navigation/predict.dart';
 
 void main() => runApp(const MyApp());
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext ctx) => Landing(),
         '/analysis': (BuildContext ctx) => Analysis(),
+        '/predict': (BuildContext ctx) => Predict(),
         '/about': (BuildContext ctx) => About(),
       },
     );

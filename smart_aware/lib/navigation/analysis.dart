@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:select_form_field/select_form_field.dart';
+import 'predict.dart';
 
 class Analysis extends StatelessWidget {
   final List<Map<String, dynamic>> itemSexo = [
     {
-      'value': '2',
+      'value': '1',
       'label': 'Hombre',
     },
     {
@@ -159,7 +160,10 @@ class Analysis extends StatelessWidget {
               SizedBox(height: 10),
               ElevatedButton(
                 child: const Text('Analizar alumno'),
-                onPressed: () => Navigator.pushNamed(context, 'route'),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Predict()),
+                ),
               ),
             ]),
       ),
