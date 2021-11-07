@@ -5,15 +5,14 @@ class Landing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 350,
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+        height: 850,
+        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 30),
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          Text(
-            'Bienvenid@',
-            style: Theme.of(context).textTheme.headline4,
-          ),
-          ...makeWidgets(context)
+          Text('Bienvenido/a',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 27)),
+          ...makeWidgets(context),
+          Image.asset('assets/teachersface.png', height: 250)
         ]),
       ),
     );
@@ -39,13 +38,13 @@ class Landing extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             ),
             //margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-            padding: const EdgeInsets.symmetric(vertical: 23, horizontal: 30),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
             child: GestureDetector(
               child: Row(
                 children: <Widget>[
                   Text(
                     thing['label'],
-                    style: Theme.of(context).textTheme.headline6,
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   ElevatedButton(
                     child: const Text('Ir'),

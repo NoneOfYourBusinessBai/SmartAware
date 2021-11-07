@@ -64,7 +64,7 @@ class Analysis extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                'Seleccione los valores que más se adecúen a la situación',
+                'Seleccione los valores que más se adecúen a la situación de su alumno',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
               SizedBox(height: 10),
@@ -108,52 +108,66 @@ class Analysis extends StatelessWidget {
                 onSaved: (val) => print(val),
               ),
               SizedBox(height: 20),
-              Text(
-                'Rellene los campos',
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
-              SizedBox(height: 20),
+              Text('Número de grado escolar (1-12)',
+                  style: Theme.of(context).textTheme.caption,
+                  textAlign: TextAlign.left),
               const TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.format_list_numbered),
-                  border: OutlineInputBorder(),
+                  /*border: OutlineInputBorder(),*/
                   labelText: 'No. de Grado',
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
+              Text(
+                'Número de veces que el alumno levantó la mano al día',
+                style: Theme.of(context).textTheme.caption,
+              ),
               const TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.person_search),
-                  border: OutlineInputBorder(),
+                  /*border: OutlineInputBorder(),*/
                   labelText: 'No. manos levantadas',
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
+              Text(
+                'Número de recursos que el alumno visitó',
+                style: Theme.of(context).textTheme.caption,
+              ),
               const TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.add_a_photo),
-                  border: OutlineInputBorder(),
+                  /*border: OutlineInputBorder(),*/
                   labelText: 'No. de recursos visitados',
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
+              Text(
+                'Número de anuncios vistos por el alumno',
+                style: Theme.of(context).textTheme.caption,
+              ),
               const TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.add_alert),
-                  border: OutlineInputBorder(),
+                  /*border: OutlineInputBorder(),*/
                   labelText: 'No. de anuncios vistos',
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 15),
+              Text(
+                'Número de veces que el alumno compartió su opinión',
+                style: Theme.of(context).textTheme.caption,
+              ),
               const TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.add_comment),
-                  border: OutlineInputBorder(),
+                  /*border: OutlineInputBorder(),*/
                   labelText: 'Discussion',
                 ),
               ),
