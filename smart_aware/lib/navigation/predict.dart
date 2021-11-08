@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'landing.dart';
 
 class Predict extends StatelessWidget {
+  Predict(this.prediction);
+
+  final String prediction;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,26 +32,30 @@ class Predict extends StatelessWidget {
   }
 
   List<Widget> makeWidgets(BuildContext context) {
+    final Color l1, l2;
+
+    if (prediction == "1") {
+      l1 = Colors.orange.shade200;
+      l2 = Colors.grey.shade300;
+    } else {
+      l2 = Colors.orange.shade200;
+      l1 = Colors.grey.shade300;
+    }
+
     final List<Map<String, dynamic>> listOfThings = <Map<String, dynamic>>[
       <String, dynamic>{
         'label': 'Rendimiento académico alto',
-        'backgroundHigh': Colors.orange.shade200,
-        'backgroundLow': Colors.grey.shade300,
-        'level': "0",
+        'level': l1,
       },
       <String, dynamic>{
         'label': 'Rendimiento académico bajo',
-        'backgroundHigh': Colors.orange.shade200,
-        'backgroundLow': Colors.grey.shade300,
-        'level': "1",
+        "level": l2,
       },
     ];
     return listOfThings
         .map((Map<String, dynamic> thing) => Container(
             decoration: BoxDecoration(
-              color: thing['level'] == "0"
-                  ? thing['backgroundHigh']
-                  : thing['backgroundLow'],
+              color: thing['level'],
               borderRadius: const BorderRadius.all(Radius.circular(10.0)),
             ),
             padding: const EdgeInsets.symmetric(vertical: 23, horizontal: 30),

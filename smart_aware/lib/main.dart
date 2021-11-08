@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (BuildContext ctx) => Landing(),
         '/analysis': (BuildContext ctx) => Analysis(),
-        '/predict': (BuildContext ctx) => Predict(),
+        '/predict': (BuildContext ctx) => Predict("1"),
         '/about': (BuildContext ctx) => About(),
       },
     );
