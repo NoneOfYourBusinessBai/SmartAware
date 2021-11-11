@@ -16,7 +16,6 @@ Future<String> createPrediction(Prediction p) async {
     body: jsonEncode({
       'gender': p.gender,
       'gradeID': p.gradeID,
-      'semester': p.semester,
       'raisedHands': p.raisedHands,
       'visitedResources': p.visitedResources,
       'announcementsView': p.announcementsView,
@@ -38,7 +37,6 @@ Future<String> createPrediction(Prediction p) async {
 class Prediction {
   int gender;
   int gradeID;
-  int semester;
   int raisedHands;
   int visitedResources;
   int announcementsView;
@@ -50,7 +48,6 @@ class Prediction {
   Prediction(
       {required this.gender,
       required this.gradeID,
-      required this.semester,
       required this.raisedHands,
       required this.visitedResources,
       required this.announcementsView,
@@ -63,7 +60,6 @@ class Prediction {
     return Prediction(
       gender: json['gender'],
       gradeID: json['gradeID'],
-      semester: json['semester'],
       raisedHands: json['raisedHands'],
       visitedResources: json['visitedResources'],
       announcementsView: json['announcementsView'],
@@ -93,17 +89,6 @@ class _AnalysisState extends State<Analysis> {
     {
       'value': '2',
       'label': 'Mujer',
-    },
-  ];
-
-  final List<Map<String, dynamic>> itemSem = [
-    {
-      'value': '1',
-      'label': '1',
-    },
-    {
-      'value': '2',
-      'label': '2',
     },
   ];
 
@@ -147,7 +132,6 @@ class _AnalysisState extends State<Analysis> {
   /*final Prediction p = Prediction(
       gender: 1,
       gradeID: 4,
-      semester: 1,
       raisedHands: 10,
       visitedResources: 7,
       announcementsView: 0,
@@ -159,7 +143,6 @@ class _AnalysisState extends State<Analysis> {
   final Prediction p = Prediction(
       gender: 2,
       gradeID: 8,
-      semester: 1,
       raisedHands: 62,
       visitedResources: 70,
       announcementsView: 44,
@@ -204,17 +187,6 @@ class _AnalysisState extends State<Analysis> {
           icon: const Icon(Icons.account_box),
           labelText: 'Sexo',
           items: itemSexo,
-          onChanged: (val) => print(val),
-          onSaved: (val) => print(val),
-        ),
-        const SizedBox(height: 10),
-        SelectFormField(
-          controller: semesterController,
-          type: SelectFormFieldType.dropdown, // or can be dialog
-          initialValue: null,
-          icon: const Icon(Icons.format_list_numbered),
-          labelText: 'No. de semestre',
-          items: itemSem,
           onChanged: (val) => print(val),
           onSaved: (val) => print(val),
         ),
@@ -320,7 +292,6 @@ class _AnalysisState extends State<Analysis> {
             p.absenceDays = int.parse(absenceDaysController.text);
             p.parentParticipating =
                 int.parse(parentParticipatingController.text);
-            p.semester = int.parse(semesterController.text);
             p.gender = int.parse(genderController.text);
 
             setState(() {
