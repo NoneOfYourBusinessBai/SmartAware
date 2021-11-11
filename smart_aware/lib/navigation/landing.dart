@@ -9,8 +9,9 @@ class Landing extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 30),
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          Text('Bienvenido/a',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 27)),
+          Image.asset('assets/SmartLetter.png', height: 40),
+          /*Text('Bienvenido/a',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 27)),*/
           ...makeWidgets(context),
           Image.asset('assets/teachersface.png', height: 250)
         ]),
