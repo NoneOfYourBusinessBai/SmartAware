@@ -144,7 +144,7 @@ class _AnalysisState extends State<Analysis> {
 
   Future<String>? _futurePrediction;
 
-  final Prediction p = Prediction(
+  /*final Prediction p = Prediction(
       gender: 1,
       gradeID: 4,
       semester: 1,
@@ -154,9 +154,8 @@ class _AnalysisState extends State<Analysis> {
       discussion: 30,
       parentParticipating: 0,
       absenceDays: 1,
-      predict: "0");
+      predict: "0");*/
 
-/*
   final Prediction p = Prediction(
       gender: 2,
       gradeID: 8,
@@ -168,7 +167,7 @@ class _AnalysisState extends State<Analysis> {
       parentParticipating: 0,
       absenceDays: 1,
       predict: "1");
-*/
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -277,14 +276,14 @@ class _AnalysisState extends State<Analysis> {
           controller: visitedResourcesController,
           keyboardType: TextInputType.phone,
           decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.add_a_photo),
+            prefixIcon: Icon(Icons.book),
             /*border: OutlineInputBorder(),*/
             labelText: 'No. de recursos visitados',
           ),
         ),
         const SizedBox(height: 15),
         Text(
-          'Número de anuncios vistos por el alumno',
+          'Notificaciones del maestro vistos por el alumno',
           style: Theme.of(context).textTheme.caption,
         ),
         TextField(
@@ -293,7 +292,7 @@ class _AnalysisState extends State<Analysis> {
           decoration: const InputDecoration(
             prefixIcon: Icon(Icons.add_alert),
             /*border: OutlineInputBorder(),*/
-            labelText: 'No. de anuncios vistos',
+            labelText: 'No. de notificaciones vistos',
           ),
         ),
         const SizedBox(height: 15),
@@ -313,7 +312,7 @@ class _AnalysisState extends State<Analysis> {
         const SizedBox(height: 10),
         ElevatedButton(
           onPressed: () {
-            /*p.gradeID = int.parse(gradeIdController.text);
+            p.gradeID = int.parse(gradeIdController.text);
             p.raisedHands = int.parse(raisedHandsController.text);
             p.visitedResources = int.parse(visitedResourcesController.text);
             p.announcementsView = int.parse(announcementsViewController.text);
@@ -322,7 +321,7 @@ class _AnalysisState extends State<Analysis> {
             p.parentParticipating =
                 int.parse(parentParticipatingController.text);
             p.semester = int.parse(semesterController.text);
-            p.gender = int.parse(genderController.text);*/
+            p.gender = int.parse(genderController.text);
 
             setState(() {
               // _futurePrediction =
